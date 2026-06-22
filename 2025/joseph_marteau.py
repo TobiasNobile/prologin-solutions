@@ -13,10 +13,10 @@ def engrenages(n: int, l: List[int]) -> None:
     final_order = []
     total = 0
     
-    for i in range(n):
-        possibilities = {} # indice de de l'élement:total
+    for i in range(n): # j'itère sur chacun des n emplacements où faut mettre un engrenage
+        possibilities = {} # (indice de de l'élement dans l:total)
         
-        for element in restant:
+        for element in restant: # parmi les engrenages restants, je teste celui qui a le maximum sur cette branche
             possibilities[l.index(element)] = total + element
         
         total = max(possibilities.values())
